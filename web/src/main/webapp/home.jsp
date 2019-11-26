@@ -35,9 +35,13 @@
             </form>
         </c:forEach>
 
-        <form method="post" action="createHero.jsp">
-        <input type="submit" value="Uj hos hozzaadasa"><br>      
+        <form method="post" action="searchEmpire.jsp">
+        <input type="submit" value="Birodalom keresese"><br>      
         </form>
+        
+        <h2>Kereses</h2>
+        <form method="post" action="searchEmpire.jsp">
+        <input type="submit" value="Birodalmak keresese"><br> 
         
         <br> 
         <br> 
