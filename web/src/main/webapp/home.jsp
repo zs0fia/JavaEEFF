@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
     <head>
         <title>Fooldal</title>
@@ -35,8 +36,8 @@
             </form>
         </c:forEach>
 
-        <form method="post" action="searchEmpire.jsp">
-        <input type="submit" value="Birodalom keresese"><br>      
+        <form method="post" action="createHero.jsp">
+        <input type="submit" value="Uj hos hozzaadasa"><br>      
         </form>
         
         <h2>Kereses</h2>

@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<form method="post" name="searchEmpire" action="searchEmpire">
+<form method="post" name="searchEmpire" action="home">
     <h1>Birodalom keresese</h1>
     Birodalom neve:<br>
     
@@ -18,5 +18,6 @@
     Birodalomban levo epulet neve
     <input type="text" name="buildingname"><br>
     
-    <input type="submit" value="Kereses">
+    <input type="submit" value="Kereses"> 
+        <input type="submit" value="Vissza"><br>        
 </form>
