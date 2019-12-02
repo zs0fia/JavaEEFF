@@ -41,7 +41,7 @@ public class UserRepository {
     }
 
     public User login(String pName, String pPassword) throws LoginException{
-        for(User u: users){
+        for(User u: getUsers()){
             if(u.getName().equals(pName) && u.getPassword().equals(pPassword))
                 return u;
         }

@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +24,7 @@ public class Building {
     private long id;
     private String name;
     private String description;
+    @OneToMany
     private List<Stock> produce = new ArrayList<>();
     private long buildTime;
     

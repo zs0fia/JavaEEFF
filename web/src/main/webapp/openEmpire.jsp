@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<form method="post" name="openEmpire">
+<form method="get" name="openEmpire">
     <h1>${openEmpire.name} Birodalom adatai</h1><br>
 
     <b>Birodalom leirasa:</b><br>

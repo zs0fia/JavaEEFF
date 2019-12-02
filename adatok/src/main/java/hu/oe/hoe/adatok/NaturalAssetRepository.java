@@ -25,7 +25,7 @@ public class NaturalAssetRepository {
 
     public NaturalAssetRepository() {
         addNatural(new NaturalAsset("fa", "fák kivágásával nyerhető"));
-        addNatural(new NaturalAsset("kő", "bányászattal nyerhető"));
+        addNatural(new NaturalAsset("ko", "bányászattal nyerhető"));
         addNatural(new NaturalAsset("arany", "bányászattal nyerhető"));       
     }
     
