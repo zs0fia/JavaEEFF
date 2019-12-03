@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<form method="get" name="openEmpire">
+<form method="get" name="openEmpire" action="openEmpire">
     <h1>${openEmpire.name} Birodalom adatai</h1><br>
-
+    <input type="hidden" name="empireId" value="${openEmpire.id}">
     <b>Birodalom leirasa:</b><br>
     ${openEmpire.description}
     <br><br>
@@ -23,16 +23,11 @@
     <b>Epitheto epuletek:</b><br>
     <c:forEach var="building" items="${buildings}">
         ${building.name} (ido: ${building.buildTime} sec)<br>
-        Nyersanyagok hozza: 
-        <ul>
-        <c:forEach var="nat" items="${building.getProduce()}">
-            <li>${nat.getAsset().getName()}: ${nat.getQuantity()}</li>     
-        </c:forEach> 
-        </ul>
-        <input type="submit" value="Epit"><br>      
+        <input type="hidden" name="buildingId" value="${building.id}">
+        <input type="submit" name="build" value="Epit"><br>      
     </c:forEach>
     <br><br>
     <form method="get" action="home">
-    <input type="submit" value="Vissza"><br> 
+    <input type="submit" name="return" value="Vissza"><br> 
     </form>
 </form>

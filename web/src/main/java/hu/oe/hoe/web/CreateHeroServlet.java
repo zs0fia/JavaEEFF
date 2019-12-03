@@ -1,12 +1,12 @@
 package hu.oe.hoe.web;
 
-import hu.oe.hoe.adatok.Hero;
-import hu.oe.hoe.adatok.Hybrid;
-import hu.oe.hoe.adatok.RegistrationException;
-import hu.oe.hoe.adatok.Species;
-import hu.oe.hoe.adatok.SpeciesRepository;
-import hu.oe.hoe.adatok.User;
-import hu.oe.hoe.adatok.UserRepository;
+import Models.Hero;
+import Models.Hybrid;
+import Exceptions.RegistrationException;
+import Models.Species;
+import Repositories.SpeciesRepository;
+import Models.User;
+import Repositories.UserRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -39,7 +39,9 @@ public class CreateHeroServlet extends HttpServlet {
         }
         
         User sess = ((User)request.getSession().getAttribute("user"));
-        sess.getHeroes().add(hero);
+        hero.setId(sess.getHeroes().size());
+        //sess.getHeroes().add(hero);
+        sess.AddHero(hero);
         
         request.getSession().setAttribute("heroes", sess.getHeroes());
         

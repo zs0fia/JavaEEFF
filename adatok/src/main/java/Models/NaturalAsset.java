@@ -1,4 +1,4 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,11 +10,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "naturals")
-@NamedQueries({
-    @NamedQuery(name = "naturalAsset.findById", query = "SELECT n FROM NaturalAsset n WHERE n.id = :id"),
-    @NamedQuery(name = "naturalAsset.sortByNameAsc", query = "SELECT n FROM NaturalAsset n ORDER BY n.name ASC"),
-    @NamedQuery(name = "naturalAsset.sortByNameDesc", query = "SELECT n FROM NaturalAsset n ORDER BY n.name DESC")
-})
+//@NamedQueries({
+//    @NamedQuery(name = "naturalAsset.findById", query = "SELECT n FROM NaturalAsset n WHERE n.id = :id"),
+//    @NamedQuery(name = "naturalAsset.sortByNameAsc", query = "SELECT n FROM NaturalAsset n ORDER BY n.name ASC"),
+//    @NamedQuery(name = "naturalAsset.sortByNameDesc", query = "SELECT n FROM NaturalAsset n ORDER BY n.name DESC")
+//})
 public class NaturalAsset {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

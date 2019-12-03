@@ -1,4 +1,4 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import java.security.Timestamp;
 

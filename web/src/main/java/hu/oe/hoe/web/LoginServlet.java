@@ -1,10 +1,10 @@
 package hu.oe.hoe.web;
 
-import hu.oe.hoe.adatok.LoginException;
-import hu.oe.hoe.adatok.RegistrationException;
-import hu.oe.hoe.adatok.SpeciesRepository;
-import hu.oe.hoe.adatok.User;
-import hu.oe.hoe.adatok.UserRepository;
+import Exceptions.LoginException;
+import Exceptions.RegistrationException;
+import Repositories.SpeciesRepository;
+import Models.User;
+import Repositories.UserRepository;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

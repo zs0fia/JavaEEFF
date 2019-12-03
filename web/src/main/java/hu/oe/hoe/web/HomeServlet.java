@@ -5,8 +5,8 @@
  */
 package hu.oe.hoe.web;
 
-import hu.oe.hoe.adatok.BuildingRepository;
-import hu.oe.hoe.adatok.User;
+import Repositories.BuildingRepository;
+import Models.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -72,6 +72,9 @@ public class HomeServlet extends HttpServlet {
                 request.getSession().setAttribute("hero", loggedInUser.getHeroes());      
                 request.getRequestDispatcher("/home.jsp").include(request, response);
             }
+        }
+        if(request.getParameter("logout") != null){
+            request.getRequestDispatcher("/index.html").include(request, response);
         }
         
     }

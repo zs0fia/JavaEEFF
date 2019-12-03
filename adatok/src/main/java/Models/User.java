@@ -1,7 +1,8 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,14 +19,22 @@ public class User {
     private String name, password;
     private boolean admin;
     @OneToMany
+    ///@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
     private List<Hero> heroes = new ArrayList<>();
     @OneToMany
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
     private List<Empire> empires = new ArrayList<>();
     
 
     public User(int id, String name, String password, boolean admin) {
         this.name = name;
         this.password = password;
+        this.admin = admin;
+    }
+    
+    public User(String name, String pw, boolean admin){
+        this.name = name;
+        password = pw;
         this.admin = admin;
     }
 
@@ -103,6 +112,13 @@ public class User {
         if(heroToRemove != null){
             heroes.remove(heroToRemove);
         }
+    }
+    
+    public void AddEmpire(Empire e){
+        empires.add(e);
+    }
+    public void AddHero(Hero h){
+        heroes.add(h);
     }
     
     private <T extends UniqueId> T GetObjectFromCollectionById(List<T> collection, int id){

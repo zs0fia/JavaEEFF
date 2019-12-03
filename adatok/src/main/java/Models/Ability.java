@@ -1,4 +1,4 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,16 +12,24 @@ public class Ability {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private long id;
-    private byte force_;
+    private byte force;
     private byte brain;
     private byte skill;
+    
+    public Ability(){}
+    
+    public Ability(byte force, byte brain, byte skill){
+        this.force = force;
+        this.brain = brain;
+        this.skill = skill;
+    }
 
     public byte getForce() {
-        return force_;
+        return force;
     }
     
     public void setForce(byte force) {
-        this.force_ = force;
+        this.force = force;
     }
 
     public byte getBrain() {

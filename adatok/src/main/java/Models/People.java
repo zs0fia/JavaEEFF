@@ -1,4 +1,4 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

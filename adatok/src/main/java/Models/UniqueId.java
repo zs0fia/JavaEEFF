@@ -1,4 +1,4 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 public interface UniqueId {
     int getId();

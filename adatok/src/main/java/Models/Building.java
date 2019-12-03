@@ -1,7 +1,8 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,18 +14,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "building")
-@NamedQueries({
-    @NamedQuery(name = "building.findById", query = "SELECT b FROM Building b WHERE b.id = :id"),
-    @NamedQuery(name = "building.sortByNameAsc", query = "SELECT b FROM Building b ORDER BY b.name ASC"),
-    @NamedQuery(name = "building.sortByNameDesc", query = "SELECT b FROM Building b ORDER BY b.name DESC")
-})
+//@NamedQueries({
+//    @NamedQuery(name = "building.findById", query = "SELECT b FROM Building b WHERE b.id = :id"),
+//    @NamedQuery(name = "building.sortByNameAsc", query = "SELECT b FROM Building b ORDER BY b.name ASC"),
+//    @NamedQuery(name = "building.sortByNameDesc", query = "SELECT b FROM Building b ORDER BY b.name DESC")
+//})
 public class Building {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private long id;
     private String name;
     private String description;
-    @OneToMany
+    
+    @OneToMany//(cascade = CascadeType.ALL)
     private List<Stock> produce = new ArrayList<>();
     private long buildTime;
     
@@ -32,6 +34,13 @@ public class Building {
         this.name = name;
         this.description = description;
         this.produce = produce;
+        this.buildTime = buildTime;
+    }
+    
+    public Building(String name, String description, long buildTime)
+    {
+        this.name = name;
+        this.description = description;
         this.buildTime = buildTime;
     }
     

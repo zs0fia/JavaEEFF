@@ -1,7 +1,7 @@
 package hu.oe.hoe.web;
 
-import hu.oe.hoe.adatok.BuildingRepository;
-import hu.oe.hoe.adatok.User;
+import Repositories.BuildingRepository;
+import Models.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

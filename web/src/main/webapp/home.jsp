@@ -47,7 +47,7 @@
         <br> 
         <br> 
         <form method="post" action="index.html">  
-        <input type="submit" value="Kijelentkezes"><br>      
+        <input type="submit" name="logout" value="Kijelentkezes"><br>      
         </form>
     </body>
 </html>

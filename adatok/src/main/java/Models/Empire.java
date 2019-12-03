@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hu.oe.hoe.adatok;
+package Models;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,9 +28,21 @@ public class Empire implements UniqueId{
     private String name;
     private String description;
     private long level;
+    
+    //@OneToMany//(cascade = CascadeType.ALL)
+    //@JoinColumn(name="Empire_ID")
     private List<Population> population = new ArrayList<>();
+    
+    //@OneToMany//(cascade = CascadeType.ALL)
+    //@JoinTable(name="empire_produce")
     private List<Stock> produce = new ArrayList<>();
+    
+    //@OneToMany//(cascade = CascadeType.ALL)
+    //@JoinTable(name="empire_warehouse")
     private List<Stock> warehouse = new ArrayList<>();
+    
+    //@OneToMany//(cascade = CascadeType.ALL)
+    //@JoinColumn(name="Empire_ID")
     private List<Building> buildings = new ArrayList<>();
     
     public Empire(String name, String description, long level) {
@@ -106,18 +122,22 @@ public class Empire implements UniqueId{
     }
     
     private void FirstSetOfPopulationAndProduce(){
+//        Random r = new Random();
+//        
+//        for (int i = 0; i < 3; i++) {
+//            produce.add(new Stock(NaturalAssetRepository.instance.getNaturals().get(i), r.nextInt(300)));
+//        }
         Random r = new Random();
-        
-        for (int i = 0; i < 3; i++) {
-            produce.add(new Stock(NaturalAssetRepository.instance.getNaturals().get(i), r.nextInt(300)));
-        }
+        produce.add(new Stock(new NaturalAsset("arany",""), r.nextInt(300)));
+        produce.add(new Stock(new NaturalAsset("ko",""), r.nextInt(300)));
+        produce.add(new Stock(new NaturalAsset("fa",""), r.nextInt(300)));
     }
     
     public void addNewBuilding(Building b){
-        buildings.add(b);
-        for (int i = 0; i < produce.size(); i++) {
-            var newQuantity = produce.get(i).getQuantity() - b.getProduce().get(i).getQuantity();
-            produce.get(i).setQuantity(newQuantity);
-        }
+//        buildings.add(b);
+//        for (int i = 0; i < produce.size(); i++) {
+//            var newQuantity = produce.get(i).getQuantity() - b.getProduce().get(i).getQuantity();
+//            produce.get(i).setQuantity(newQuantity);
+//        }
     }
 }

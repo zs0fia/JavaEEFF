@@ -1,5 +1,6 @@
-package hu.oe.hoe.adatok;
+package Repositories;
 
+import Models.Species;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;

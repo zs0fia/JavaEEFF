@@ -1,7 +1,8 @@
-package hu.oe.hoe.adatok;
+package Models;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +18,9 @@ public class Hero implements UniqueId {
     private long id;
     
     private String name, description;
-    @OneToMany
+    @OneToMany//(cascade = CascadeType.ALL)
     private List<Hybrid> hybrid = new ArrayList<>();
+    private List<Quality> qualities = new ArrayList<>();
 
 
     public Hero(String name, String description) {
@@ -62,4 +64,11 @@ public class Hero implements UniqueId {
         this.description = description;
     }
     
+    public List<Quality> getQualities() {
+        return qualities;
+    }
+
+    public void setQualities(List<Quality> qualities) {
+        this.qualities = qualities;
+    }
 }

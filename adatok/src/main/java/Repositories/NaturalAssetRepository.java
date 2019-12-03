@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hu.oe.hoe.adatok;
+package Repositories;
 
+import Models.NaturalAsset;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -24,9 +25,9 @@ public class NaturalAssetRepository {
     private List<NaturalAsset> naturals = new ArrayList<>();
 
     public NaturalAssetRepository() {
-        addNatural(new NaturalAsset("fa", "fák kivágásával nyerhető"));
-        addNatural(new NaturalAsset("ko", "bányászattal nyerhető"));
-        addNatural(new NaturalAsset("arany", "bányászattal nyerhető"));       
+        addNatural(new NaturalAsset("fa", "fak kivagasaval nyerheto"));
+        addNatural(new NaturalAsset("ko", "banyasszattal nyerheto"));
+        addNatural(new NaturalAsset("arany", "banyaszattal nyerheto"));       
     }
     
     public void addNatural(NaturalAsset pValue){

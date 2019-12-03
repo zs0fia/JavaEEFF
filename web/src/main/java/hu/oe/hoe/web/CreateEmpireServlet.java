@@ -1,7 +1,7 @@
 package hu.oe.hoe.web;
 
-import hu.oe.hoe.adatok.Empire;
-import hu.oe.hoe.adatok.User;
+import Models.Empire;
+import Models.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -25,7 +25,9 @@ public class CreateEmpireServlet extends HttpServlet {
         Empire empire = new Empire(request.getParameter("name"), request.getParameter("desc"), 1);
         
         User sess = ((User)request.getSession().getAttribute("user"));
-        sess.getEmpires().add(empire);
+        //sess.getEmpires().add(empire);
+        empire.setId(sess.getEmpires().size());
+        sess.AddEmpire(empire);
         
         request.getSession().setAttribute("empire", sess.getEmpires());
         
