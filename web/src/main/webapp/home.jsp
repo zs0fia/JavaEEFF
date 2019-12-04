@@ -43,6 +43,7 @@
         <h2>Kereses</h2>
         <form method="post" action="searchEmpire.jsp">
         <input type="submit" value="Birodalmak keresese"><br> 
+        </form>
         
         <br> 
         <br> 
